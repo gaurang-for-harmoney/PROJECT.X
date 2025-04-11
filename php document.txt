@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";  // default XAMPP password is empty
-$dbname = "resume_analyzer";  // your database name
+$password = "";  
+$dbname = "resume_analyzer"; 
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
