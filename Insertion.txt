@@ -1,0 +1,30 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";  // default XAMPP password is empty
+$dbname = "resume_analyzer";  // your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Insert multiple records
+$sql = "INSERT INTO users (firstname, lastname, email, phoneno, linkedin, location) VALUES
+('John', 'Doe', 'john.doe@example.com', '1234567890', 'https://linkedin.com/in/johndoe', 'New York'),
+('Jane', 'Smith', 'jane.smith@example.com', '0987654321', 'https://linkedin.com/in/janesmith', 'Los Angeles'),
+('Alice', 'Johnson', 'alice.johnson@example.com', '5551234567', 'https://linkedin.com/in/alicejohnson', 'Chicago'),
+('Bob', 'Williams', 'bob.williams@example.com', '4445556666', 'https://linkedin.com/in/bobwilliams', 'Houston'),
+('Emma', 'Brown', 'emma.brown@example.com', '7778889999', 'https://linkedin.com/in/emmabrown', 'Miami')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Records inserted successfully.";
+} else {
+    echo "Error inserting records: " . $conn->error;
+}
+
+$conn->close();
+?>
