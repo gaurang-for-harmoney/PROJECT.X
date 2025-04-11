@@ -4,15 +4,12 @@ $username = "root";
 $password = "";  
 $dbname = "resume_analyzer"; 
 
-// Create connection
 $conn = new mysqli($servername, $username, $password);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Create Database
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 if ($conn->query($sql) === TRUE) {
     echo "Database created successfully or already exists.<br>";
@@ -20,10 +17,8 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating database: " . $conn->error;
 }
 
-// Select the database
 $conn->select_db($dbname);
 
-// Create Table
 $table_sql = "CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(100) NOT NULL,
