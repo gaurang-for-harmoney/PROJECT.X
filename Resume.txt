@@ -118,7 +118,7 @@ DOCTYPE html>
     <div class="container">
         <!-- Logo Section -->
         <div class="logo-container">
-            <img src="https://consumersiteimages.trustpilot.net/business-units/5a8d5b184a37e600017c57ae-198x149-1x.jpg" alt="Perfect CV Logo">
+            <img src="https://r2.erweima.ai/i/FOTj5z4TTTGQNMvu7BpbHQ.png" alt="Perfect CV Logo">
             <div class="scanner-line"></div>
         </div>
         <!-- Title -->
