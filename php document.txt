@@ -1,0 +1,44 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";  // default XAMPP password is empty
+$dbname = "resume_analyzer";  // your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Create Database
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully or already exists.<br>";
+} else {
+    echo "Error creating database: " . $conn->error;
+}
+
+// Select the database
+$conn->select_db($dbname);
+
+// Create Table
+$table_sql = "CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phoneno VARCHAR(20),
+    linkedin VARCHAR(255),
+    location VARCHAR(100)
+)";
+
+if ($conn->query($table_sql) === TRUE) {
+    echo "Table 'users' created successfully.";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$conn->close();
+?>
